@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+</head>
+<body>
+    <h2>Home Page</h2>
+    <p>Username {{current_user.name}}</p>
+    <div class="createPost">
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <td>Caption: </td>
+                    <td><input type="text" name="caption"></td>
+                </tr>
+                <tr>
+                    <td>Post: </td>
+                    <td><textarea name="post" id="" cols="30" rows="10"></textarea></td>
+                </tr>
+            </table>
+            <input type="submit" name="" id="">
+        </form>
+    </div>
+    {% for msg in messages%}
+        <p>{{msg}}</p>
+    {%endfor%}
+    <div class="Posts">
+        {% for post in posts%}
+            <div class="post">
+                <h2>{{post.caption}}</h2>
+                <p>{{post.post[0:100]}} <a href="/post/{{post.id}}">Read more</a></p>
+                <p class="by">By: {{post.user.name}}</p>    
+            </div>
+        {%endfor%}
+    </div>    
+</body>
+</html>

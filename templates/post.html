@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+    <style>
+        body{
+            background-color: black;
+            color: azure;
+        }
+        .post{
+            width: 70%;
+            margin: auto;
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid orange;
+
+        }
+        #by{
+            text-align: right;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>read more Page</h2>
+        
+        <div class="post">
+            <h3><i>{{post.caption}}</i></h3>
+            {{post.post}}
+        
+            <p id="by">{{post.user.name}}</p>
+        </div>
+        {%if post.user==current_user %}
+            <a href="/delete?id={{post.id}}">Delete it</a>
+        {%endif %}
+        <br>
+        <a href="/home">Click Here</a> to go back
+</body>
+</html>

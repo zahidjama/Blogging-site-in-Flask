@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+    <h2>Login Page</h2>
+    <a href="/">Click Here</a> to go back
+    <form action="" method="post">
+        <table>
+            <tr>
+                <td><label for="">Email: </label></td>
+                <td><input type="email" name="email" placeholder="example@mail.com" id="" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Password: </label></td>
+                <td><input type="password" name="password" placeholder="**********" id="" required></td>
+            </tr>
+            
+        </table>
+        <input type="submit" name="" id="">
+    </form>
+    <a href="/register">Click Here</a> to create new account
+    {% for msg in messages%}
+        <p>{{msg}}</p>
+    {%endfor%}
+</body>
+</html>
